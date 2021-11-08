@@ -1,2 +1,2 @@
-# ChakraUIcompornent
+# ChakraUI
 Created with CodeSandbox
