@@ -31,6 +31,7 @@ export const Header: VFC = memo(() => {
             ユーザー管理アプリ
           </Heading>
         </Flex>
+        {/* Topのボタン */}
         <Flex
           align="center"
           fontSize="sm"
@@ -42,6 +43,7 @@ export const Header: VFC = memo(() => {
           </Box>
           <Link>設定</Link>
         </Flex>
+        {/* ここまで横拡大した幅で出るメニュー */}
         <IconButton
           aria-label="メニューボタン"
           icon={<HamburgerIcon />}
@@ -50,7 +52,9 @@ export const Header: VFC = memo(() => {
           display={{ base: "block", md: "none" }}
           onClick={onOpen}
         />
+        {/* ハンバーガーの挙動 */}
       </Flex>
+
       <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>
@@ -62,6 +66,7 @@ export const Header: VFC = memo(() => {
           </DrawerContent>
         </DrawerOverlay>
       </Drawer>
+      {/* ここまでバンバーガーの中身 */}
     </>
   );
 });

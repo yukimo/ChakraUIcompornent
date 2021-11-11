@@ -3,6 +3,7 @@ import { Page404 } from "../compornents/pages/Page404";
 import { Setting } from "../compornents/pages/Setting";
 import { UserManegement } from "../compornents/pages/UserManegement";
 
+//これは配下ページの配列。メニュー項目であるが、ルーターなので見せかけではなくリンクパスと内容をまとめて定義していく
 export const homeRoutes = [
   {
     path: "/",

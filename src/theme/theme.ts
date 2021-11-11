@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
+//全体にわたる背景の色を指定
 const theme = extendTheme({
   styles: {
     global: {
