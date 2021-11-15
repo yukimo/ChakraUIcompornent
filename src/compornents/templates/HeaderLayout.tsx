@@ -11,9 +11,9 @@ export const HeaderLayout: VFC<Props> = memo((props) => {
   return (
     <>
       <Header />
-      　
-      {/*  childreのようなタグで囲った型の宣言になるので上記でReactnodeを宣言する*/}
       {children}
+      {/*  childreのようなタグで囲った型の宣言になるので上記でReactnodeを宣言する*/}
+
       {}
     </>
   );
