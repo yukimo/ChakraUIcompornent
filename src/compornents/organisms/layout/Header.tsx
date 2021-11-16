@@ -1,27 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-  Box,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  DrawerOverlay,
-  Flex,
-  Heading,
-  IconButton,
-  Link,
-  useDisclosure
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import { memo, useCallback, VFC } from "react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { MenuIconButton } from "../../atoms/button/MenuIconButton";
 import { useHistory } from "react-router-dom";
+import { MenuDrawer } from "../../molecules/MenuDrawer";
 
 export const Header: VFC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const history = useHistory();
   const onClickHome = useCallback(() => history.push("/home"), []);
+
   const onClickUserManagement = useCallback(
-    () => history.push("/home/user_management"),
+    () => history.push("/home/user_mannagement"),
     []
   );
   const onClickSetting = useCallback(() => history.push("/home/setting"), []);
@@ -59,29 +49,11 @@ export const Header: VFC = memo(() => {
           <Link onClick={onClickSetting}>設定</Link>
         </Flex>
         {/* ここまで横拡大した幅で出るメニュー */}
-        <IconButton
-          ChakraUI_Header_Liked
-          aria-label="メニューボタン"
-          icon={<HamburgerIcon />}
-          size="sm"
-          variant="unstyled"
-          display={{ base: "block", md: "none" }}
-          onClick={onOpen}
-        />
+        <MenuIconButton onOpen={onOpen} />
         {/* ハンバーガーの挙動 */}
       </Flex>
 
-      <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerBody p={0} bg="red.100">
-              <Button w="100%">Top</Button>
-              <Button w="100%">ユーザー一覧</Button>
-              <Button w="100%">設定</Button>
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
+      <MenuDrawer isOpen={isOpen} onClose={onClose} />
       {/* ここまでバンバーガーの中身 */}
     </>
   );
