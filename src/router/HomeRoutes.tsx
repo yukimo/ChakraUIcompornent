@@ -1,28 +1,33 @@
 import { Home } from "../compornents/pages/Home";
 import { Page404 } from "../compornents/pages/Page404";
 import { Setting } from "../compornents/pages/Setting";
-import { UserManegement } from "../compornents/pages/UserManegement";
+import { UserManagement } from "../compornents/pages/UserManagement";
 
 //これは配下ページの配列。メニュー項目であるが、ルーターなので見せかけではなくリンクパスと内容をまとめて定義していく
 export const homeRoutes = [
   {
     path: "/",
     exact: true,
-    chldren: <Home />
+    children: <Home />
   },
   {
+    path: "/user_management",
+    exact: false,
+    children: <UserManagement />
+  },
+  /* {
     path: "/user_manegement",
     exact: false,
-    chldren: <UserManegement />
-  },
+    children: <UserManegement />
+  }, */
   {
     path: "/setting",
     exact: false,
-    chldren: <Setting />
+    children: <Setting />
   },
   {
     path: "*",
     exact: false,
-    chldren: <Page404 />
+    children: <Page404 />
   }
 ];

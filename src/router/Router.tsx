@@ -24,7 +24,7 @@ export const Router: VFC = memo(() => {
                 path={`${url}${route.path}`}
               >
                 {/* ここまではリンクパスと中身のみ */}
-                <HeaderLayout>{route.chldren}</HeaderLayout>
+                <HeaderLayout>{route.children}</HeaderLayout>
                 {/* headerlayoutテンプレートでなぜチルドレンを挟むのかわからない。
                 ただこの箇所にはhome配下の表示ページが記載されるので、headerlayoutのテンプレートに
                 ヘッダーの下にhome配下が記載されることが書かれている*/}
