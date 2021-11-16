@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import { memo, useCallback, VFC } from "react";
-import { MenuIconButton } from "../../atoms/button/MenuIconButton";
+import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
+import { MenuIconButton } from "../../atoms/button/MenuIconButton";
+
 import { MenuDrawer } from "../../molecules/MenuDrawer";
 
 export const Header: VFC = memo(() => {
@@ -11,7 +12,7 @@ export const Header: VFC = memo(() => {
   const onClickHome = useCallback(() => history.push("/home"), []);
 
   const onClickUserManagement = useCallback(
-    () => history.push("/home/user_mannagement"),
+    () => history.push("/home/user_management"),
     []
   );
   const onClickSetting = useCallback(() => history.push("/home/setting"), []);
@@ -53,7 +54,13 @@ export const Header: VFC = memo(() => {
         {/* ハンバーガーの挙動 */}
       </Flex>
 
-      <MenuDrawer isOpen={isOpen} onClose={onClose} />
+      <MenuDrawer
+        isOpen={isOpen}
+        onClose={onClose}
+        onClickHome={onClickHome}
+        onClickUserManagement={onClickUserManagement}
+        onClickSetting={onClickSetting}
+      />
       {/* ここまでバンバーガーの中身 */}
     </>
   );
